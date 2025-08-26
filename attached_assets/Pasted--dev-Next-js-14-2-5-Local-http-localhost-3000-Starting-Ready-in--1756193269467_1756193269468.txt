@@ -1,0 +1,73 @@
+
+> dev
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2s
+ ○ Compiling /chat ...
+ ✓ Compiled /chat in 6.6s (460 modules)
+ GET /chat 200 in 6869ms
+ ✓ Compiled in 457ms (237 modules)
+ ○ Compiling /chat/[id] ...
+ ⨯ ./app/chat/[id]/page.tsx
+Error: 
+  × Expected ',', got 'm'
+    ╭─[/home/runner/workspace/app/chat/[id]/page.tsx:13:1]
+ 13 │   const params = useParams();
+ 14 │   const chatId = params.id as string;
+ 15 │   const [drawer, setDrawer] = useState(false);
+ 16 │   const [items, setItems] = useState<Msg[]>([{ role:'assistant', content:'Hi! I'm Scyen — minimal chat. What should I build?' }]);
+    ·                                                                                 ─
+ 17 │   const [working, setWorking] = useState(false);
+ 18 │   const [files, setFiles] = useState<{name:string}[]>([]);
+ 19 │   const [chatTitle, setChatTitle] = useState('New Chat');
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/chat/[id]/page.tsx
+ ⨯ ./app/chat/[id]/page.tsx
+Error: 
+  × Expected ',', got 'm'
+    ╭─[/home/runner/workspace/app/chat/[id]/page.tsx:13:1]
+ 13 │   const params = useParams();
+ 14 │   const chatId = params.id as string;
+ 15 │   const [drawer, setDrawer] = useState(false);
+ 16 │   const [items, setItems] = useState<Msg[]>([{ role:'assistant', content:'Hi! I'm Scyen — minimal chat. What should I build?' }]);
+    ·                                                                                 ─
+ 17 │   const [working, setWorking] = useState(false);
+ 18 │   const [files, setFiles] = useState<{name:string}[]>([]);
+ 19 │   const [chatTitle, setChatTitle] = useState('New Chat');
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/chat/[id]/page.tsx
+ ⨯ ./app/chat/[id]/page.tsx
+Error: 
+  × Expected ',', got 'm'
+    ╭─[/home/runner/workspace/app/chat/[id]/page.tsx:13:1]
+ 13 │   const params = useParams();
+ 14 │   const chatId = params.id as string;
+ 15 │   const [drawer, setDrawer] = useState(false);
+ 16 │   const [items, setItems] = useState<Msg[]>([{ role:'assistant', content:'Hi! I'm Scyen — minimal chat. What should I build?' }]);
+    ·                                                                                 ─
+ 17 │   const [working, setWorking] = useState(false);
+ 18 │   const [files, setFiles] = useState<{name:string}[]>([]);
+ 19 │   const [chatTitle, setChatTitle] = useState('New Chat');
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/chat/[id]/page.tsx
+ GET /_next/static/webpack/2e09d4e4aefe909a.webpack.hot-update.json 500 in 6084ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /chat 500 in 60ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/home/runner/workspace/.next/cache/webpack/client-development-fallback/0.pack.gz_' -> '/home/runner/workspace/.next/cache/webpack/client-development-fallback/0.pack.gz'

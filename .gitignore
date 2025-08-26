@@ -1,0 +1,44 @@
+# Next.js build output
+.next/
+
+# Node modules
+node_modules/
+
+# npm package manager cache
+.npm/
+
+# yarn package manager cache
+.yarn/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# Local development
+.DS_Store
+.vscode/
+
+# Production build
+build/
+dist/
+
+# Next.js specific
+.next/cache/
+.next/static/
+.next/server/
+.next/trace
+.next/app-paths-manifest.json
+.next/build-manifest.json
+.next/middleware-build-manifest.js
+.next/server-reference-manifest.js
+.next/server-reference-manifest.json
+.next/vendor-chunks/
+
+

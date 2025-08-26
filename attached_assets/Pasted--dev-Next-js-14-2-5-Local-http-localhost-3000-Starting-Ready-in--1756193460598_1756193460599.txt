@@ -1,0 +1,75 @@
+
+> dev
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 8.2s (1045 modules)
+ GET / 200 in 8547ms
+ ✓ Compiled in 600ms (529 modules)
+ ○ Compiling /chat ...
+ ✓ Compiled /chat in 2s (1040 modules)
+ GET /chat 200 in 2245ms
+ ⨯ ./app/chat/[id]/page.tsx
+Error: 
+  × Expected ',', got 't'
+    ╭─[/home/runner/workspace/app/chat/[id]/page.tsx:39:1]
+ 39 │ 
+ 40 │     const q = norm(text);
+ 41 │     if(q.includes('which llm') || q.includes('what llm') || q.includes('what model') || q.includes('model use')){
+ 42 │       setItems(m=>[...m, { role:'assistant', content:'I can't disclose.' }]); return;
+    ·                                                             ─
+ 43 │     }
+ 44 │     if(q.includes('who made you') || q.includes('who built you') || q.includes('creator') || q.includes('kisne banaya') || q.includes('banaya kisne')){
+ 45 │       setItems(m=>[...m, { role:'assistant', content:'Sir Arslan Ahmad.' }]); return;
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/chat/[id]/page.tsx
+ ○ Compiling /_not-found ...
+ ⨯ ./app/chat/[id]/page.tsx
+Error: 
+  × Expected ',', got 't'
+    ╭─[/home/runner/workspace/app/chat/[id]/page.tsx:39:1]
+ 39 │ 
+ 40 │     const q = norm(text);
+ 41 │     if(q.includes('which llm') || q.includes('what llm') || q.includes('what model') || q.includes('model use')){
+ 42 │       setItems(m=>[...m, { role:'assistant', content:'I can't disclose.' }]); return;
+    ·                                                             ─
+ 43 │     }
+ 44 │     if(q.includes('who made you') || q.includes('who built you') || q.includes('creator') || q.includes('kisne banaya') || q.includes('banaya kisne')){
+ 45 │       setItems(m=>[...m, { role:'assistant', content:'Sir Arslan Ahmad.' }]); return;
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/chat/[id]/page.tsx
+ ⨯ ./app/chat/[id]/page.tsx
+Error: 
+  × Expected ',', got 't'
+    ╭─[/home/runner/workspace/app/chat/[id]/page.tsx:39:1]
+ 39 │ 
+ 40 │     const q = norm(text);
+ 41 │     if(q.includes('which llm') || q.includes('what llm') || q.includes('what model') || q.includes('model use')){
+ 42 │       setItems(m=>[...m, { role:'assistant', content:'I can't disclose.' }]); return;
+    ·                                                             ─
+ 43 │     }
+ 44 │     if(q.includes('who made you') || q.includes('who built you') || q.includes('creator') || q.includes('kisne banaya') || q.includes('banaya kisne')){
+ 45 │       setItems(m=>[...m, { role:'assistant', content:'Sir Arslan Ahmad.' }]); return;
+    ╰────
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./app/chat/[id]/page.tsx
+ GET /_next/static/webpack/9a7f7346679d4fd7.webpack.hot-update.json 500 in 6431ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /chat 500 in 54ms
