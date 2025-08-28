@@ -170,18 +170,18 @@ export default function ChatPage(){
       <Drawer open={drawer} onClose={()=>setDrawer(false)} />
 
       <main ref={scrollRef} className="flex-1 overflow-y-auto">
-        <div className="max-w-3xl mx-auto px-4 md:px-6 py-6">
-          <div className="mb-6 text-center">
-            <h1 className="text-lg font-semibold text-neutral-300">{chatTitle}</h1>
+        <div className="max-w-3xl mx-auto px-3 md:px-6 py-3 md:py-6">
+          <div className="mb-3 md:mb-6 text-center">
+            <h1 className="text-base md:text-lg font-semibold text-neutral-300">{chatTitle}</h1>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-2 md:space-y-3">
             {items.map((m,i)=>(
               <div key={i} className="relative">
-                <div className={`px-4 py-3 rounded-2xl border text-sm leading-relaxed ${m.role==='user' ?
-                  'bg-neutral-900/60 border-white/10 ml-auto max-w-[78%]' :
-                  'bg-gradient-to-br from-[#161018] to-[#1E1420] border-[#6B1B5C]/30 mr-auto max-w-[78%]'}`}>
-                  <div className={`text-[10px] uppercase tracking-wide mb-1 text-neutral-400 ${m.role==='user'?'text-right':''}`}>{m.role==='user'?'You':'Scyen'}</div>
+                <div className={`px-3 md:px-4 py-2 md:py-3 rounded-xl md:rounded-2xl border text-xs md:text-sm leading-relaxed ${m.role==='user' ?
+                  'bg-neutral-900/60 border-white/10 ml-auto max-w-[85%] md:max-w-[78%]' :
+                  'bg-gradient-to-br from-[#161018] to-[#1E1420] border-[#6B1B5C]/30 mr-auto max-w-[85%] md:max-w-[78%]'}`}>
+                  <div className={`text-[9px] md:text-[10px] uppercase tracking-wide mb-1 text-neutral-400 ${m.role==='user'?'text-right':''}`}>{m.role==='user'?'You':'Scyen'}</div>
                   <div className="whitespace-pre-wrap text-neutral-200">{m.content}</div>
                 </div>
               </div>
@@ -189,15 +189,15 @@ export default function ChatPage(){
           </div>
 
           {working && (
-            <div className="mt-3 text-sm text-neutral-300 inline-flex items-center gap-2">
+            <div className="mt-2 md:mt-3 text-xs md:text-sm text-neutral-300 inline-flex items-center gap-2">
               <span className="dot"/><span className="dot"/><span className="dot"/><span>Thinking…</span>
             </div>
           )}
         </div>
       </main>
 
-      <div className="border-t border-white/10 p-4">
-        <div className="max-w-3xl mx-auto space-y-3">
+      <div className="border-t border-white/10 p-3 md:p-4">
+        <div className="max-w-3xl mx-auto space-y-2 md:space-y-3">
           {/* Progress bar above composer */}
           {shouldShowProgress && (
             <ProgressBar 
