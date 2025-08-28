@@ -124,13 +124,14 @@ export class AIAgent {
 Search Results:
 ${JSON.stringify(searchResults, null, 2)}
 
-Extract and organize the most relevant information. Focus on:
-1. Key findings
-2. Important entities/tools/platforms mentioned
-3. Trends and patterns
-4. Credible sources
+Extract and organize the most relevant information in a way that can be used to create a natural, conversational response. Focus on:
+- Key findings and important details
+- Specific examples, tools, platforms, or entities mentioned
+- Current trends and patterns
+- Most credible and useful sources
+- Interesting insights that would be valuable to share
 
-Return a structured analysis in JSON format.`;
+Organize this information in a clear, structured way that will help create an engaging, flowing response rather than a rigid list format.`;
 
     this.callbacks.onPhaseUpdate('analysis', 70);
     const analysis = await this.callGemini(analysisPrompt);
@@ -142,18 +143,23 @@ Return a structured analysis in JSON format.`;
   private async synthesizeResponse(query: string, analysis: string): Promise<string> {
     this.callbacks.onPhaseUpdate('synthesis', 30);
 
-    const synthesisPrompt = `Based on this analysis, create a comprehensive response to: "${query}"
+    const synthesisPrompt = `You are ScynV, a witty and engaging AI assistant. Based on this research analysis, create a natural, conversational response to: "${query}"
 
 Analysis:
 ${analysis}
 
-Create a well-structured, informative response that:
-1. Directly answers the user's question
-2. Provides specific examples and details
-3. Is organized and easy to read
-4. Includes relevant insights from the research
+Write your response in a smooth, engaging style that feels like you're having a friendly conversation. Guidelines:
+- Write naturally like you're talking to a friend
+- Use simple paragraph breaks instead of heavy markdown formatting
+- Avoid overusing # headings or * formatting - use them sparingly only when absolutely necessary
+- Make it flow smoothly and be easy to read
+- Include specific examples and insights from the research
+- Add a touch of wit or humor where appropriate
+- Use casual language that feels human, not robotic
+- Structure information naturally within flowing paragraphs
+- Only use basic formatting like bold for emphasis occasionally
 
-Format as markdown with proper headings and lists.`;
+Keep it conversational, informative, and engaging without looking like a markdown-heavy bot response.`;
 
     this.callbacks.onPhaseUpdate('synthesis', 80);
     const response = await this.callGemini(synthesisPrompt);
