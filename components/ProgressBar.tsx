@@ -50,7 +50,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ isExpanded, onToggle }) => {
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 bg-[#D78AC5] rounded-full animate-pulse" />
             <span className="text-sm font-medium text-neutral-200">
-              AI Research Agent
+              ScynV Research Agent
             </span>
             <span className="text-xs text-neutral-400">
               {Math.round(currentTask.overallProgress)}%

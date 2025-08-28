@@ -10,7 +10,7 @@ export default function TopBar({ onMenu }:{ onMenu:()=>void }){
     <header className="px-3 md:px-6 py-2 md:py-3 border-b border-white/10 sticky top-0 bg-neutral-950/80 backdrop-blur z-30">
       <div className="max-w-5xl mx-auto flex items-center gap-2 md:gap-3">
         <button onClick={onMenu} className="px-1.5 md:px-2 py-1.5 md:py-2 rounded-lg border border-white/10 hover:border-white/20 text-sm">☰</button>
-        <div className="font-semibold text-sm md:text-base">scyen <span className="text-[#F4AFCB]">chat</span></div>
+        <div className="font-semibold text-sm md:text-base">ScynV <span className="text-[#F4AFCB]">AI</span></div>
         <div className="ml-auto flex items-center gap-1.5 md:gap-2">
           <button className="px-1.5 md:px-2 py-1.5 md:py-2 rounded-lg border border-white/10 text-sm" title="Notifications">🔔</button>
           <div className="relative">

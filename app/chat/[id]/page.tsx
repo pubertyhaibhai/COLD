@@ -1,4 +1,3 @@
-
 'use client';
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'next/navigation';
@@ -15,7 +14,7 @@ export default function ChatPage(){
   const params = useParams();
   const chatId = params.id as string;
   const [drawer, setDrawer] = useState(false);
-  const [items, setItems] = useState<Msg[]>([{ role:'assistant', content:'Hi! I am Scyen - minimal chat. What should I build?' }]);
+  const [items, setItems] = useState<Msg[]>([{ role:'assistant', content:'Hey! I\'m ScynV - your witty AI companion. Kya banayenge aaj? 😎' }]);
   const [working, setWorking] = useState(false);
   const [files, setFiles] = useState<{name:string}[]>([]);
   const [chatTitle, setChatTitle] = useState('New Chat');
@@ -45,19 +44,19 @@ export default function ChatPage(){
       if (savedChat) {
         try {
           const chatData = JSON.parse(savedChat);
-          setItems(chatData.messages || [{ role:'assistant', content:'Hi! I am Scyen - minimal chat. What should I build?' }]);
+          setItems(chatData.messages || [{ role:'assistant', content:'Hey! I\'m ScynV - your witty AI companion. Kya banayenge aaj? 😎' }]);
           setChatTitle(chatData.title || `Chat ${chatId}`);
         } catch (e) {
           setChatTitle(`Chat ${chatId}`);
-          setItems([{ role:'assistant', content:'Hi! I am Scyen - minimal chat. What should I build?' }]);
+          setItems([{ role:'assistant', content:'Hey! I\'m ScynV - your witty AI companion. Kya banayenge aaj? 😎' }]);
         }
       } else {
         setChatTitle(`Chat ${chatId}`);
-        setItems([{ role:'assistant', content:'Hi! I am Scyen - minimal chat. What should I build?' }]);
+        setItems([{ role:'assistant', content:'Hey! I\'m ScynV - your witty AI companion. Kya banayenge aaj? 😎' }]);
       }
     } else {
       setChatTitle('New Chat');
-      setItems([{ role:'assistant', content:'Hi! I am Scyen - minimal chat. What should I build?' }]);
+      setItems([{ role:'assistant', content:'Hey! I\'m ScynV - your witty AI companion. Kya banayenge aaj? 😎' }]);
     }
   }, [chatId]);
 
@@ -73,10 +72,10 @@ export default function ChatPage(){
 
     const q = norm(text);
     if(q.includes('which llm') || q.includes('what llm') || q.includes('what model') || q.includes('model use')){
-      setItems(m=>[...m, { role:'assistant', content:'I cannot disclose.' }]); return;
+      setItems(m=>[...m, { role:'assistant', content:'I can\'t disclose private or any secret information.' }]); return;
     }
     if(q.includes('who made you') || q.includes('who built you') || q.includes('creator') || q.includes('kisne banaya') || q.includes('banaya kisne')){
-      setItems(m=>[...m, { role:'assistant', content:'Sir Arslan Ahmad.' }]); return;
+      setItems(m=>[...m, { role:'assistant', content:'Cheering owner made by Mr. Arsalan Ahmad Sir.' }]); return;
     }
 
     setWorking(true);
@@ -88,7 +87,7 @@ export default function ChatPage(){
         body: JSON.stringify({ message: text, chatId }) 
       });
       const data = await res.json();
-      
+
       // Check if we should use the AI agent
       if (data.useAgent) {
         // Start real AI agent research
@@ -110,7 +109,7 @@ export default function ChatPage(){
 
         eventSource.onmessage = (event) => {
           const data = JSON.parse(event.data);
-          
+
           switch (data.type) {
             case 'phase_start':
               // Phase already exists, just mark as active
@@ -181,7 +180,7 @@ export default function ChatPage(){
                 <div className={`px-3 md:px-4 py-2 md:py-3 rounded-xl md:rounded-2xl border text-xs md:text-sm leading-relaxed ${m.role==='user' ?
                   'bg-neutral-900/60 border-white/10 ml-auto max-w-[85%] md:max-w-[78%]' :
                   'bg-gradient-to-br from-[#161018] to-[#1E1420] border-[#6B1B5C]/30 mr-auto max-w-[85%] md:max-w-[78%]'}`}>
-                  <div className={`text-[9px] md:text-[10px] uppercase tracking-wide mb-1 text-neutral-400 ${m.role==='user'?'text-right':''}`}>{m.role==='user'?'You':'Scyen'}</div>
+                  <div className={`text-[9px] md:text-[10px] uppercase tracking-wide mb-1 text-neutral-400 ${m.role==='user'?'text-right':''}`}>{m.role==='user'?'You':'ScynV'}</div>
                   <div className="whitespace-pre-wrap text-neutral-200">{m.content}</div>
                 </div>
               </div>

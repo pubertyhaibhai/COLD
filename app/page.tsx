@@ -10,7 +10,7 @@ export default function Landing(){
     <main className="min-h-screen bg-neutral-950 text-neutral-100">
       <header className="sticky top-0 z-30 bg-neutral-950/70 backdrop-blur border-b border-white/10">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
-          <div className="font-semibold">scyen <span className="text-[#F4AFCB]">ai</span></div>
+          <div className="font-semibold">ScynV <span className="text-[#F4AFCB]">AI</span></div>
           <nav className="ml-auto flex items-center gap-3 text-sm">
             <a href="#features" className="px-3 py-2 rounded-lg hover:bg-white/5">Features</a>
             <a href="#pricing" className="px-3 py-2 rounded-lg hover:bg-white/5">Pricing</a>

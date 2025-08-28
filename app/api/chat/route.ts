@@ -4,8 +4,16 @@ import { AIAgent } from '@/lib/aiAgent';
 
 function guardrails(q: string) {
   const s = q.toLowerCase();
-  if (/(which|what)\s+(llm|model)/.test(s)) return 'I can\'t disclose.';
-  if (/(who\s+(made|built)\s+you|creator|kisne\s+banaya)/.test(s)) return 'Sir Arslan Ahmad.';
+  if (/(which|what)\s+(llm|model)/.test(s) || s.includes('gpt') || s.includes('openai') || s.includes('gemini')) {
+    const responses = [
+      'I can\'t disclose private or any secret information.',
+      'Yaar, that\'s confidential stuff! Can\'t share that.',
+      'Sorry buddy, can\'t reveal the secret sauce! 🤐',
+      'That\'s classified information, mere dost!'
+    ];
+    return responses[Math.floor(Math.random() * responses.length)];
+  }
+  if (/(who\s+(made|built)\s+you|creator|owner|kisne\s+banaya)/.test(s)) return 'Cheering owner made by Mr. Arsalan Ahmad Sir.';
   return null;
 }
 
@@ -29,7 +37,7 @@ export async function POST(req: NextRequest) {
   const searchKey = process.env.GOOGLE_SEARCH_API_KEY;
 
   if (!geminiKey) {
-    return NextResponse.json({ reply: '(demo) I would research, plan, and execute. Tell me your goal!' });
+    return NextResponse.json({ reply: 'Demo mode mein hun! But still ready to help. Batao kya karna hai! 🚀' });
   }
 
   // Check if this should use the AI agent for research
