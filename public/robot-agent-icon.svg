@@ -1,0 +1,21 @@
+
+<svg width="24" height="24" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M150 180C150 163.431 163.431 150 180 150C196.569 150 210 163.431 210 180C210 196.569 196.569 210 180 210C163.431 210 150 196.569 150 180Z" stroke="#D78AC5" stroke-width="12" fill="none"/>
+  
+  <path d="M280 120C280 103.431 293.431 90 310 90C326.569 90 340 103.431 340 120C340 136.569 326.569 150 310 150C293.431 150 280 136.569 280 120Z" stroke="#D78AC5" stroke-width="12" fill="none"/>
+  
+  <path d="M320 180C320 163.431 333.431 150 350 150C366.569 150 380 163.431 380 180C380 196.569 366.569 210 350 210C333.431 210 320 196.569 320 180Z" stroke="#D78AC5" stroke-width="12" fill="none"/>
+  
+  <path d="M240 90C240 73.431 253.431 60 270 60C286.569 60 300 73.431 300 90C300 106.569 286.569 120 270 120C253.431 120 240 106.569 240 90Z" stroke="#D78AC5" stroke-width="12" fill="none"/>
+  
+  <circle cx="380" cy="240" r="15" stroke="#D78AC5" stroke-width="8" fill="none"/>
+  
+  <rect x="180" y="260" width="200" height="120" rx="60" stroke="#D78AC5" stroke-width="12" fill="none"/>
+  <rect x="200" y="290" width="160" height="60" rx="30" stroke="#D78AC5" stroke-width="10" fill="none"/>
+  
+  <circle cx="240" cy="320" r="6" fill="#D78AC5"/>
+  <circle cx="320" cy="320" r="6" fill="#D78AC5"/>
+  
+  <rect x="160" y="280" width="20" height="40" rx="10" stroke="#D78AC5" stroke-width="8" fill="none"/>
+  <rect x="400" y="280" width="20" height="40" rx="10" stroke="#D78AC5" stroke-width="8" fill="none"/>
+</svg>
