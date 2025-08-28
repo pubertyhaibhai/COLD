@@ -143,23 +143,21 @@ Organize this information in a clear, structured way that will help create an en
   private async synthesizeResponse(query: string, analysis: string): Promise<string> {
     this.callbacks.onPhaseUpdate('synthesis', 30);
 
-    const synthesisPrompt = `You are ScynV, a witty and engaging AI assistant. Based on this research analysis, create a natural, conversational response to: "${query}"
+    const synthesisPrompt = `Based on this research analysis, provide a direct answer. DO NOT repeat or mention the user's question.
 
 Analysis:
 ${analysis}
 
-Write your response in a smooth, engaging style that feels like you're having a friendly conversation. Guidelines:
-- Write naturally like you're talking to a friend
-- Use simple paragraph breaks instead of heavy markdown formatting
-- Avoid overusing # headings or * formatting - use them sparingly only when absolutely necessary
-- Make it flow smoothly and be easy to read
-- Include specific examples and insights from the research
-- Add a touch of wit or humor where appropriate
-- Use casual language that feels human, not robotic
-- Structure information naturally within flowing paragraphs
-- Only use basic formatting like bold for emphasis occasionally
+STRICT FORMATTING RULES:
+- NO # headings at all
+- NO * bullet points or excessive formatting
+- Write in natural flowing paragraphs
+- Keep it conversational and direct
+- Just give the answer, don't restate what was asked
+- Use simple paragraph breaks for structure
+- Be concise but informative
 
-Keep it conversational, informative, and engaging without looking like a markdown-heavy bot response.`;
+Provide the answer directly without any preamble or question repetition.`;
 
     this.callbacks.onPhaseUpdate('synthesis', 80);
     const response = await this.callGemini(synthesisPrompt);

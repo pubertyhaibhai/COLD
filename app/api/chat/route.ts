@@ -52,10 +52,28 @@ export async function POST(req: NextRequest) {
 
   // Standard Gemini response for non-research queries
   try {
+    const systemPrompt = `You are ScynV, a helpful AI assistant. Be natural and conversational.
+
+IMPORTANT RULES:
+- DO NOT use # headings or excessive * formatting
+- Keep responses SHORT and CONCISE for simple questions
+- Only give LONG detailed answers when the question specifically requires depth
+- Write like you're talking naturally to a friend
+- Use simple paragraph breaks instead of markdown formatting
+- Be direct and to the point
+
+User: ${message}`;
+
     const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=' + geminiKey, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ contents: [{ parts: [{ text: message }] }] })
+      body: JSON.stringify({ 
+        contents: [{ parts: [{ text: systemPrompt }] }],
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 512
+        }
+      })
     });
     const data = await response.json();
     const text = data?.candidates?.[0]?.content?.parts?.[0]?.text || '(no reply)';
