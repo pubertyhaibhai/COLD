@@ -1,5 +1,5 @@
 {
-  "name": "scyen-full-pro-fixed",
+  "name": "enhanced-ai-agent",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,7 +11,8 @@
     "next": "14.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.3.3"
+    "typescript": "5.3.3",
+    "axios": "^1.6.0"
   },
   "devDependencies": {
     "@types/node": "20.8.10",
